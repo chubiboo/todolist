@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Roboto:wght@100;300;700&family=Sacramento&family=Ubuntu:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    /*background-color: #112B3C ;*/
+    height: 100vh;
+    width: 100%;
+    backdrop-filter: blur(6px);
+    background-image: linear-gradient(to top left,#9975ec 50%,  rgba(0, 0, 0,0.8) 50%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.box{
+    position: absolute;
+    width:500px;
+    height: fit-content;
+    left: 50%;
+    margin-left: -250px;
+    top: 20%;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
+    border-radius: 5px;
+    /*text-align: center;*/
+}
+.container{
+    margin: 20px 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container h1{
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    display: inline;
+    color: rgba(0, 0, 0,0.5) ;
+}
+.container p{
+    color: rgba(0, 0, 0,0.5) ;
+}
+form{
+    text-align: center;
+    margin-top: 30px;
+}
+.task{
+    background-color: white;
+    width: 300px;
+    height: 40px;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.05), 0 6px 20px -4px rgba(0, 0, 0, 0.19) ;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.task::placeholder{
+    color: #b7b7b7;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+
+}
+button{
+    background-color:#9975ec ;
+    font-size: 16px;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 40px;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.05), 0 6px 20px -4px rgba(0, 0, 0, 0.19) ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:hover{
+    width: 105px;
+    height: 45px;
+
+    transition-timing-function: ease-out;
+
+}
+.todo-items{
+    background-color:#9975ec ;
+    height: 50px;
+    width: 420px;
+    margin-top: 30px;
+    border-radius: 40px;
+    text-align: start;
+    padding-top: 17px;
+    padding-left: 30px;
+    padding-right: 17px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-items p {
+    color: white;
+    font-size: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+input[type=text]{
+    color: rgba(0, 0, 0,0.5) ;
+    font-size: 16px;
+}
+.icon{
+    color: white;
+    font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
