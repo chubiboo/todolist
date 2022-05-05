@@ -1,13 +1,15 @@
 import React from "react";
-import {AiOutlineClose, AiOutlineCloseCircle, ImAngry} from "react-icons/all";
+import {AiOutlineClose, AiOutlineCloseCircle,AiOutlineCheckCircle, ImAngry} from "react-icons/all";
+
 
 export default function Items(props){
-    const {work, removeTodo} = props
+    const {work, removeTodo} =props
     return(
         <div className={"todo-items"}>
-            <p> {props.work.text}</p>
+            <p contentEditable={"true"}> {work.text}</p>
             <div>
-                <AiOutlineCloseCircle className={"icon"} />
+                <AiOutlineCloseCircle className={"icon"} onClick={()=> removeTodo(work.id)}   />
+                <AiOutlineCheckCircle className={"icon"} onClick={()=> compeletedTask(work.id)}/>
             </div>
         </div>
     )

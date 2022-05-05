@@ -7,24 +7,34 @@ import React, {useState} from "react";
 function App() {
     const [todo, setTodo] = useState([])
     const addTask = (task)=> {
-        let id = 1
-        if (todo.length > 0) {
-            id = todo[0].id + 1
+        if(task !==''){
+            let id = 1
+            if (todo.length > 0) {
+                id = todo[0].id + 1
+            }
+            let todoObjects = {
+                id: id,
+                text: task,
+                completed: false
         }
-        let todoObjects = {
-            id: id,
-            text: task,
-            completed: false
+            let todoArray = [todoObjects, ...todo]
+            setTodo(todoArray)
+
         }
 
-        let todoArray = [todoObjects, ...todo]
-        setTodo(todoArray)
+
     }
-    //removeing items from the list
-    const removeTodo =(id)=>{
-        /*let updatedTodos = [...todo].filter((todonot)=> todonot.id !== id)
-        setTodo(updatedTodos)*/
 
+    const removeTodo =(id)=>{
+        let updatedTodos = [...todo].filter((todonot)=> todonot.id !== id)
+        setTodo(updatedTodos)
+        console.log("remove Task")
+    }
+
+    const completeTask=(id)=>{
+        let updatedTodosOnComplete = [...todo].filter((todonot)=> todonot.id !== id)
+        setTodo(updatedTodosOnComplete)
+        let completeTodos
     }
     //getting the day
     const date = new Date()
@@ -59,7 +69,7 @@ function App() {
                 <Form addtask={addTask}/>
                 {todo.map((todoer)=>{
                     return(
-                        <Items removeTodo={removeTodo}work={todoer} key={todo.id}/>
+                        <Items removeTodo={removeTodo}work={todoer} completeTodo={} key={todo.id}/>
                     )
                 })}
             </div>

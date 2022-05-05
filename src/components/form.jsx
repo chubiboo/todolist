@@ -11,6 +11,7 @@ function Form (props){
         task.preventDefault()
         props.addtask(input)
         setInput("")
+        console.log("added")
     }
     return(
         <form onSubmit={submit}>
