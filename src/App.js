@@ -69,7 +69,7 @@ function App() {
                 <Form addtask={addTask}/>
                 {todo.map((todoer)=>{
                     return(
-                        <Items removeTodo={removeTodo}work={todoer} completeTodo={} key={todo.id}/>
+                        <Items removeTodo={removeTodo}work={todoer} key={todo.id}/>
                     )
                 })}
             </div>

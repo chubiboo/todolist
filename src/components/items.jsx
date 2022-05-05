@@ -9,7 +9,6 @@ export default function Items(props){
             <p contentEditable={"true"}> {work.text}</p>
             <div>
                 <AiOutlineCloseCircle className={"icon"} onClick={()=> removeTodo(work.id)}   />
-                <AiOutlineCheckCircle className={"icon"} onClick={()=> compeletedTask(work.id)}/>
             </div>
         </div>
     )
