@@ -26,6 +26,7 @@ body{
     background-color: #f1f1f1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
     border-radius: 5px;
+    justify-content: center;
     /*text-align: center;*/
 }
 .container{
@@ -78,12 +79,11 @@ button{
     border: none;
     margin-top: 5px;
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.05), 0 6px 20px -4px rgba(0, 0, 0, 0.19) ;
+
 }
 
 button:hover{
-    width: 105px;
-    height: 45px;
-
+    transform: scale(1.1);
     transition-timing-function: ease-out;
 
 }
@@ -115,5 +115,11 @@ input[type=text]{
 .icon{
     color: white;
     font-size: 20px;
+}
+.clear{
+    background-color: #a93f3f;
+    margin-left: 38%;
+    margin-top:30px;
+
 }
 

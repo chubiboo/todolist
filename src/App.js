@@ -4,6 +4,7 @@ import Form from "./components/form";
 import Items from "./components/items";
 
 import React, {useState} from "react";
+import Delete from "./components/deleteButton";
 function App() {
     const [todo, setTodo] = useState([])
     const addTask = (task)=> {
@@ -14,8 +15,7 @@ function App() {
             }
             let todoObjects = {
                 id: id,
-                text: task,
-                completed: false
+                text: task
         }
             let todoArray = [todoObjects, ...todo]
             setTodo(todoArray)
@@ -30,12 +30,11 @@ function App() {
         setTodo(updatedTodos)
         console.log("remove Task")
     }
-
-    const completeTask=(id)=>{
-        let updatedTodosOnComplete = [...todo].filter((todonot)=> todonot.id !== id)
-        setTodo(updatedTodosOnComplete)
-        let completeTodos
+    const clearTodo =()=>{
+        setTodo([])
+        console.log(todo)
     }
+
     //getting the day
     const date = new Date()
     const days = {weekday: 'long'}
@@ -72,7 +71,10 @@ function App() {
                         <Items removeTodo={removeTodo}work={todoer} key={todo.id}/>
                     )
                 })}
+                <Delete delete={clearTodo} />
             </div>
+
+
     </div>
   );
 }
